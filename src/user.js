@@ -15,9 +15,9 @@ export const MOCK_USER = {
     xp: 200000,
     currentReviews: [
         {
-            id: 2,
+            id: 4,
             displayName: "Raigo",
-            project: "forum",
+            project: "go-again",
         },
     ],
     points: 5,
