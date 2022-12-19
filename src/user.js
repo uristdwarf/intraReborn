@@ -21,4 +21,4 @@ export const MOCK_USER = {
         },
     ],
     points: 5,
-}
+};

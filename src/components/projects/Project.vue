@@ -8,7 +8,5 @@ const proj = getProjectByName(route.params.name);
 </script>
 
 <template>
-    <li v-for="(value, key) in proj">
-        {{ key }}: {{ value }}
-    </li>
+    <li v-for="(value, key) in proj">{{ key }}: {{ value }}</li>
 </template>

@@ -23,7 +23,7 @@ export const goAgain = {
     ],
     prevProject: 0,
     nextProject: 2,
-}
+};
 export const miniFiglet = {
     id: 2,
     name: "mini-figlet",
@@ -36,11 +36,8 @@ export const miniFiglet = {
     auditors: [],
     prevProject: 1,
     nextProject: 0,
-}
-export const data = [
-    goAgain,
-    miniFiglet,
-];
+};
+export const data = [goAgain, miniFiglet];
 
 export function getProjectByName(name) {
     for (const proj of data) {
