@@ -1,0 +1,12 @@
+services:
+  intra:
+    build:
+      context: .
+      dockerfile: Dockerfile.developer
+    image: intra
+    volumes:
+      - ./:/src
+    ports: 
+      - 5173:5173
+    tty: true
+    command: "bash"

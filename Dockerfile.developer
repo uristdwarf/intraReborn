@@ -1,10 +1,9 @@
 ## DEV IMAGE, DO NOT USE IN PRODUCTION
-FROM ubuntu:latest
-RUN apt update && apt upgrade -y
+FROM alpine:latest
 WORKDIR /src/
-RUN apt install npm golang -y
+RUN apk add npm go bash
 ADD . .
 RUN npm install
 RUN go build  -o /bin/intra cmd/intra/main.go
-ENTRYPOINT bash
 
+ENTRYPOINT npm run dev --host
