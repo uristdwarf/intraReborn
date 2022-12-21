@@ -4,9 +4,32 @@ services:
       context: .
       dockerfile: Dockerfile.developer
     image: intra
+    environment:
+      - DBPASSWORD=developer
+      - DBHOST=db
     volumes:
       - ./:/src
     ports: 
       - 5173:5173
     tty: true
     command: "bash"
+    networks:
+      - intranet
+  db:
+    image: postgres:latest
+    hostname: db
+    environment:
+      POSTGRES_PASSWORD: developer
+    volumes:
+      - type: volume
+        source: dbdata
+        target: /var/lib/postgresql/data
+    networks:
+      - intranet
+
+networks:
+  intranet:
+    driver: bridge
+
+volumes:
+  dbdata:
